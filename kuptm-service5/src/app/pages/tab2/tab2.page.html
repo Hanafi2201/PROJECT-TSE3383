@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="danger">
+     <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+     </ion-buttons>
+    <ion-title>FAQ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="faqArt">
+
+  <ion-card class="barang1" (click)="expandItem(item)" *ngFor="let item of items1">
+    <ion-card-header>
+      <ion-card-title >Are the services free?</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <app-expandable expandHeight="150px" [expanded]="item.expanded">
+        <p>
+          Most of the services provided are free except for the printing service. The printing service requires students to pay a little sum of money after completion of service.
+          The payment for printing service can be made at the person in charge in KOMASA. The rest of the services are absolutely free.
+        </p>
+        
+      </app-expandable>
+      
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="expandItem2(item)" *ngFor="let item of items">
+    <ion-card-header>
+      <ion-card-title>What happen after I have completed my booking session?</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <app-expandable expandHeight="100px" [expanded]="item.expanded">
+        <p>
+          The booking information is kept in our database and student can pick up the booked item or venue.
+        </p>
+        
+      </app-expandable>
+      
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="expandItem3(item)" *ngFor="let item of items3">
+    <ion-card-header>
+      <ion-card-title>Are the pass year exam papers legit?</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <app-expandable expandHeight="100px" [expanded]="item.expanded">
+        <p>
+          Yes, all the exam papers in this app are legit and we got them from KUPTM staff.
+        </p>
+        
+      </app-expandable>
+      
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="expandItem4(item)" *ngFor="let item of items4">
+    <ion-card-header>
+      <ion-card-title>How do I contact the admin of this app?</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <app-expandable expandHeight="150px" [expanded]="item.expanded">
+        <p>
+          Student can contact the admin by simply going to 'Setting' and tab 'Contact'. Student can send feedback, complaint or any suggestion to improve the application.
+        </p>
+        
+      </app-expandable>
+      
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+

@@ -1,0 +1,85 @@
+<ion-header [translucent]="true" class="ion-text-wrap">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title >
+     Hardware Reservation
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-text-wrap">
+  
+  <ion-card>
+    
+    <ion-card-content>
+      <h2>ATTENTION:</h2>
+      <p >Welcome!! A student can book only one hardware at a time.</p>
+      </ion-card-content>
+    </ion-card>
+    
+
+<ion-card>
+  <ion-card-content>
+    <ion-list>
+      <ion-radio-group value="hardware" [(ngModel)]="post.hardware">
+        <ion-list-header>
+          <ion-label>List of hardwares:</ion-label>
+        </ion-list-header>
+
+         <center><img src="/assets/hdmi.jpg" width="150" height="150" ></center>
+        <ion-item>
+          <ion-label class="ion-text-wrap">HDMI Cable</ion-label>
+          <ion-radio slot="start" value="hdmi" ></ion-radio>
+        </ion-item>
+
+
+         <center><img src="/assets/projector.jpg" width="150" height="150" ></center>
+        <ion-item>
+          <ion-label class="ion-text-wrap">LCD Projector</ion-label>
+          <ion-radio slot="start" value="projector" ></ion-radio>
+        </ion-item>
+
+
+        <center><img src="/assets/remote.jpg" width="150" height="150" ></center>
+        <ion-item>
+          <ion-label class="ion-text-wrap">Projector Remote</ion-label>
+          <ion-radio slot="start" value="remote" ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+</ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-content>
+    <ion-item id="id">
+       <ion-label position="floating">Student ID</ion-label>
+       <ion-input type="string" [(ngModel)]="post.id" placeholder="Enter your student ID"></ion-input>
+    </ion-item>
+
+    <ion-item id="phone">
+       <ion-label position="floating">Contact Number</ion-label>
+       <ion-input type="string" [(ngModel)]="post.phone" placeholder="Enter your phone number"></ion-input>
+    </ion-item>
+
+  <ion-item id="Returntime">
+        <ion-label position="floating">Returning time:</ion-label>
+        <ion-datetime displayFormat="h:mm A" [(ngModel)]="post.Returntime"></ion-datetime>
+      </ion-item>
+  </ion-card-content>
+</ion-card>
+
+<p>Please bring your student ID when picking up the item.</p>
+
+<ion-button expand="block" color="primary" (click)="createPost(post)">
+   <ion-icon slot="start" name="send"></ion-icon>Confirm Book</ion-button>
+
+  
+         
+   
+<ion-item></ion-item>
+  <ion-item></ion-item>
+
+</ion-content>

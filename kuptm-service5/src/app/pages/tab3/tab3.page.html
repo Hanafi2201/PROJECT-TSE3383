@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title >Setting</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  
+    <ion-button class="ion-padding" expand="full" shape="round" color="primary" (click)="logoutAction()" >
+      <ion-icon name="exit-outline"></ion-icon>
+      Logout
+     </ion-button>
+    <ion-button class="ion-padding" expand="full" shape="round" color="danger" [routerLink]="['/contact']">
+      <ion-icon name="chatbubble-ellipses"></ion-icon>
+       Contact Us
+     </ion-button>
+  
+
+</ion-content>

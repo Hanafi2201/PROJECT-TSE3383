@@ -1,0 +1,99 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+    <ion-title>
+      Printing 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  fullscreen="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Printing </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <p >Fill in the in formation and upload the file you wish to print.</p>
+    </ion-card-header>
+    <ion-card-content >
+      <!--Enter the id-->
+      <ion-item id="id">
+         <ion-label position="floating">Student ID</ion-label>
+         <ion-input type="string" [(ngModel)]="post.id" placeholder="Enter your student ID"></ion-input>
+         </ion-item>
+        <!--Enter the id--> 
+
+      <!--Enter the quantity-->
+       <ion-item id="quantity">
+       <ion-label position="floating">Quantity</ion-label>
+       <ion-input type="number" [(ngModel)]="post.quantity" placeholder="How many copy would you like?"></ion-input>
+       </ion-item>
+      <!--Enter the quantity-->
+
+      <!--selection for colour-->
+  <ion-list>
+    <ion-item>
+      <ion-label>Colour</ion-label>
+      <ion-select placeholder="Select One" value="selection" [(ngModel)]="post.colour" okText="Select" cancelText="Cancel">
+        <ion-select-option value="blackNwhite">Black&White</ion-select-option>
+        <ion-select-option value="coloured">Coloured Print</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <!--selection for colour-->
+
+  <!--selection for side-->
+  <ion-list>
+    <ion-item>
+      <ion-label>Printing side</ion-label>
+      <ion-select placeholder="Select One" value="selection" [(ngModel)]="post.side" okText="Select" cancelText="Cancel">
+        <ion-select-option value="single">Single sided</ion-select-option>
+        <ion-select-option value="double">Double sided</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <!--selection for colour-->
+  
+  <!--time for the customer wants to take the printing-->
+  <ion-item id="time">
+      <ion-label position="floating">Time</ion-label>
+      <ion-datetime displayFormat="h:mm A" [(ngModel)]="post.time"></ion-datetime>
+    </ion-item>
+  <!--time for the customer wants to take the printing-->
+  
+  
+
+  <div>
+    <form method="post" enctype="multipart/form-data">
+      <div>
+        <div><b>⛰ Upload photo</b></div><br/>
+        <input type="file" (change)="uploadPhoto($event)"  accept=".png,.jpg,.pdf" multiple="true" />
+        
+        <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="barStatus">
+    Uploading.....
+  </div>
+
+
+
+     
+    </ion-card-content>
+    
+    
+    <ion-button expand="block" color="primary" (click)="createPost(post)">
+    <ion-icon slot="start" name="send"></ion-icon>
+           Send
+    </ion-button>
+  </ion-card>
+  <ion-item></ion-item>
+  <ion-item></ion-item>
+</ion-content>
+

@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar color="danger"> 
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Venue</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-content>
+      <p >Please choose the venue you want to book and enter the correct information.</p>
+      
+      <ion-list>
+        <ion-radio-group value="venue" [(ngModel)]="post.venue">
+          <ion-list-header>
+            
+            <ion-label>List of venues: </ion-label>
+          </ion-list-header>
+  
+           <center><img src="/assets/studentsquare.jpg" width="150" height="150" ></center>
+          <ion-item>
+            <ion-label class="ion-text-wrap">Student Square</ion-label>
+            <ion-radio slot="start" value="ssquare" ></ion-radio>
+          </ion-item>
+  
+  
+           <center><img src="/assets/court.jpg" width="150" height="150" ></center>
+          <ion-item>
+            <ion-label class="ion-text-wrap">Futsal Court</ion-label>
+            <ion-radio slot="start" value="court" ></ion-radio>
+          </ion-item>
+  
+  
+          <center><img src="/assets/musicroom.jpg" width="150" height="150" ></center>
+          <ion-item>
+            <ion-label class="ion-text-wrap">Music Room</ion-label>
+            <ion-radio slot="start" value="class" ></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+  </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item id="id">
+         <ion-label position="floating">Student ID</ion-label>
+         <ion-input type="string" [(ngModel)]="post.id" placeholder="Enter your student ID"></ion-input>
+      </ion-item>
+
+      <ion-item id="phone">
+         <ion-label position="floating">Contact Number</ion-label>
+         <ion-input type="string" [(ngModel)]="post.phone" placeholder="Enter your phone number"></ion-input>
+      </ion-item>
+
+      <ion-item id="Bookingtime">
+            <ion-label position="floating">Booking Date:</ion-label>
+            <ion-datetime displayFormat="YYYY-MMMM-DD" min="2021" max="2021" [(ngModel)]="post.Bookingtime"></ion-datetime>
+      </ion-item>
+  
+    <ion-item id="Returntime">
+          <ion-label position="floating">Returning Date:</ion-label>
+          <ion-datetime displayFormat="YYYY-MMMM-DD" min="2021" max="2021" [(ngModel)]="post.Returntime"></ion-datetime>
+    </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" color="primary" (click)="createPost(post)">
+     <ion-icon slot="start" name="send"></ion-icon>Confirm Book</ion-button>
+
+    <ion-item></ion-item>
+  <ion-item></ion-item>
+
+</ion-content>
